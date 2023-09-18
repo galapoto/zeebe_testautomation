@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 6.1.1 (Python 3.9.12 on win32)" generated="20230918 13:16:21.280" rpa="false" schemaversion="4">
+<suite id="s1" name="Health Status" source="C:\Users\P50\Test\Of test\zeebe_testautomation\health_status.robot">
+<test id="s1-t1" name="Broker Startup Check" line="9">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${BASE_URL}/startup</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230918 13:16:21.469" level="INFO">GET Request : url=http://localhost:9600/startup 
+ path_url=/startup 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230918 13:16:21.469" level="INFO">GET Response : url=http://localhost:9600/startup 
+ status=204, reason= 
+ headers={'Date': 'Mon, 18 Sep 2023 10:16:21 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230918 13:16:21.470" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<status status="PASS" starttime="20230918 13:16:21.450" endtime="20230918 13:16:21.470"/>
+</kw>
+<kw name="Check Broker Startup">
+<arg>${response.status_code}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${status_code} == 204</arg>
+<arg>Log</arg>
+<arg>Broker startup successful!</arg>
+<arg>ELSE IF</arg>
+<arg>${status_code} == 503</arg>
+<arg>Log</arg>
+<arg>Broker Startup failed!</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Unexpected status code: ${status_code}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Broker startup successful!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230918 13:16:21.472" level="INFO">Broker startup successful!</msg>
+<status status="PASS" starttime="20230918 13:16:21.472" endtime="20230918 13:16:21.472"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.471" endtime="20230918 13:16:21.472"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.470" endtime="20230918 13:16:21.472"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.450" endtime="20230918 13:16:21.473"/>
+</test>
+<test id="s1-t2" name="Broker Readiness Check" line="13">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${BASE_URL}/ready</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230918 13:16:21.485" level="INFO">GET Request : url=http://localhost:9600/ready 
+ path_url=/ready 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230918 13:16:21.485" level="INFO">GET Response : url=http://localhost:9600/ready 
+ status=204, reason= 
+ headers={'Date': 'Mon, 18 Sep 2023 10:16:21 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230918 13:16:21.485" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<status status="PASS" starttime="20230918 13:16:21.475" endtime="20230918 13:16:21.485"/>
+</kw>
+<kw name="Check Broker Readiness">
+<arg>${response.status_code}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${status_code} == 204</arg>
+<arg>Log</arg>
+<arg>Broker is ready!</arg>
+<arg>ELSE IF</arg>
+<arg>${status_code} == 503</arg>
+<arg>Log</arg>
+<arg>Broker is not ready!</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Unexpected status code: ${status_code}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Broker is ready!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230918 13:16:21.489" level="INFO">Broker is ready!</msg>
+<status status="PASS" starttime="20230918 13:16:21.488" endtime="20230918 13:16:21.489"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.487" endtime="20230918 13:16:21.489"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.486" endtime="20230918 13:16:21.489"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.474" endtime="20230918 13:16:21.489"/>
+</test>
+<test id="s1-t3" name="Broker Health Check" line="17">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>${BASE_URL}/health</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230918 13:16:21.503" level="INFO">GET Request : url=http://localhost:9600/health 
+ path_url=/health 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230918 13:16:21.503" level="INFO">GET Response : url=http://localhost:9600/health 
+ status=204, reason= 
+ headers={'Date': 'Mon, 18 Sep 2023 10:16:21 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230918 13:16:21.503" level="INFO">${response} = &lt;Response [204]&gt;</msg>
+<status status="PASS" starttime="20230918 13:16:21.492" endtime="20230918 13:16:21.503"/>
+</kw>
+<kw name="Check Broker Readiness">
+<arg>${response.status_code}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${status_code} == 204</arg>
+<arg>Log</arg>
+<arg>Broker is ready!</arg>
+<arg>ELSE IF</arg>
+<arg>${status_code} == 503</arg>
+<arg>Log</arg>
+<arg>Broker is not ready!</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Unexpected status code: ${status_code}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Broker is ready!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230918 13:16:21.505" level="INFO">Broker is ready!</msg>
+<status status="PASS" starttime="20230918 13:16:21.505" endtime="20230918 13:16:21.505"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.505" endtime="20230918 13:16:21.506"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.504" endtime="20230918 13:16:21.506"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.491" endtime="20230918 13:16:21.506"/>
+</test>
+<test id="s1-t4" name="Gateway Health Check" line="21">
+<kw name="GET" library="RequestsLibrary">
+<var>${response}</var>
+<arg>http://localhost:9600/actuator/health</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20230918 13:16:21.519" level="INFO">GET Request : url=http://localhost:9600/actuator/health 
+ path_url=/actuator/health 
+ headers={'User-Agent': 'python-requests/2.31.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230918 13:16:21.522" level="INFO">GET Response : url=http://localhost:9600/actuator/health 
+ status=200, reason= 
+ headers={'Content-Type': 'application/vnd.spring-boot.actuator.v3+json', 'Transfer-Encoding': 'chunked', 'Date': 'Mon, 18 Sep 2023 10:16:21 GMT', 'Keep-Alive': 'timeout=60', 'Connection': 'keep-alive'} 
+ body={"status":"UP"} 
+ </msg>
+<msg timestamp="20230918 13:16:21.523" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230918 13:16:21.508" endtime="20230918 13:16:21.523"/>
+</kw>
+<kw name="Check Gateway Health">
+<arg>${response.status_code}</arg>
+<kw name="Run Keyword If" library="BuiltIn">
+<arg>${status_code} == 200</arg>
+<arg>Log</arg>
+<arg>Gateway is healthy!</arg>
+<arg>ELSE IF</arg>
+<arg>${status_code} == 503</arg>
+<arg>Log</arg>
+<arg>Gateway is not healthy!</arg>
+<arg>ELSE</arg>
+<arg>Fail</arg>
+<arg>Unexpected status code: ${status_code}</arg>
+<doc>Runs the given keyword with the given arguments, if ``condition`` is true.</doc>
+<kw name="Log" library="BuiltIn">
+<arg>Gateway is healthy!</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20230918 13:16:21.525" level="INFO">Gateway is healthy!</msg>
+<status status="PASS" starttime="20230918 13:16:21.524" endtime="20230918 13:16:21.525"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.524" endtime="20230918 13:16:21.525"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.523" endtime="20230918 13:16:21.525"/>
+</kw>
+<status status="PASS" starttime="20230918 13:16:21.508" endtime="20230918 13:16:21.525"/>
+</test>
+<status status="PASS" starttime="20230918 13:16:21.282" endtime="20230918 13:16:21.528"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Health Status">Health Status</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
