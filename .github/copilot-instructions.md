@@ -1,0 +1,2 @@
+# GitHub Copilot mandatory repository instructions
+Read root AGENTS.md before every run. GLOBAL-AGENT-RUN-PROOF v1 requires exact project-plan subsection, previous-to-current implementation stage delta, core-user-path evidence, reviewed reuse candidates/license/safety, reused/adapted versus scratch code, exact CI/production evidence and DONE / IN PROGRESS / NOT STARTED / BLOCKED project report. Preserve more restrictive project safety/approval and scope rules. Never claim live from a source commit.

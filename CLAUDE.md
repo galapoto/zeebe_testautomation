@@ -1,0 +1,2 @@
+# Mandatory agent instructions
+Before any task, read root AGENTS.md and fully apply GLOBAL-AGENT-RUN-PROOF v1 after every run. Link exact plan subsection and core function, before/after stage, reused/adapted/scratch evidence, original CI and live truth, and whole-project DONE / IN PROGRESS / NOT STARTED / BLOCKED. Preserve stricter local authorization and safety rules.
