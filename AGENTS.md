@@ -46,3 +46,8 @@ Request review using a real GitHub reviewer account/team when permitted. If an i
 Record `REVIEW_REQUIRED`, `REVIEWER_ASSIGNED`, `REVIEWED`, `REQUIRED_APPROVALS_MET`, `MERGED_MAIN`, `CI_QUALIFIED_MAIN`, `RELEASED` and `USER_VERIFIED` as distinct evidence states. Once independently approved, ship each independently qualified user-visible feature promptly via the repository's approved **main** release route; never confuse a reviewer assignment, CI success or main merge with verified production usability. Preserve stricter project security, privacy, branch, legal and production controls.
 
 **Canonical owner policy + receipt:** [GALAPOTO-INDEPENDENT-REVIEW-001](https://github.com/galapoto/Projects/blob/main/docs/governance/GALAPOTO_INDEPENDENT_REVIEW_ASSIGNMENT_001.md).
+
+---
+
+## TYPE-TASTE-UI-2026-11-19 — Relevant font, typography, Apple/Emil, Impeccable and Taste skills
+Before changing UI or user-facing text, read the authoritative [cross-project design/typography skill standard](https://github.com/galapoto/Projects/blob/main/docs/governance/TYPE_TASTE_UI_2026_11_19.md). Select and **apply** relevant pinned Web Typography, Font Pairing, HIG, Emil Kowalski, Impeccable, Taste and UI-UX Pro Max skills; record exact source/version, what changed, tested result and why other skills were skipped. Use legal fonts/assets, legible hierarchy, appropriate dark/light contrast and accessible responsive interaction. Prefer existing code, REA and lawful components, then build the smallest missing delta; ship each qualified complete feature promptly. **Independent peer review is OPTIONAL** under OWNER-REVIEW-OPTIONAL-2026-11-18. Never bypass repository-specific security, CI, law or deploy authorization. Non-UI components mark visual criteria NOT_APPLICABLE.
